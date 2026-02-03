@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant" class="light">
+<html lang="zh-Hant" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -60,17 +60,17 @@
         }
     </style>
 </head>
-<body class="bg-slate-100 dark:bg-slate-950 text-slate-900 dark:text-slate-100 p-4 md:p-8 min-h-screen flex flex-col transition-all duration-500">
+<body class="bg-slate-100 dark:bg-slate-950 text-slate-900 dark:text-slate-100 p-4 md:p-8 min-h-screen flex flex-col transition-all duration-500 text-left">
 
     <div class="max-w-5xl mx-auto flex-grow w-full">
         <!-- Header with Branding & Theme Toggle -->
         <header class="flex justify-between items-start mb-12">
             <!-- Top Left: Branding -->
-            <div class="flex items-center gap-3">
+            <div class="flex items-center gap-3 text-left">
                 <div class="p-2 bg-indigo-600 rounded-xl text-white shadow-lg shadow-indigo-500/20">
                     <i data-lucide="orbit" class="w-6 h-6"></i>
                 </div>
-                <div class="flex flex-col">
+                <div class="flex flex-col text-left">
                     <div class="flex items-center leading-none">
                         <span class="text-2xl font-[900] tracking-tighter text-slate-900 dark:text-white">AstroLunar</span>
                         <span class="text-2xl font-light tracking-tighter text-indigo-500 ml-0.5">Pro</span>
@@ -95,7 +95,7 @@
         <section class="mb-12">
             <div class="bg-white dark:bg-slate-900 rounded-3xl converter-shadow p-6 md:p-8 border border-slate-200 dark:border-slate-800 transition-colors">
                 <div class="flex items-center justify-between mb-8">
-                    <div class="flex items-center gap-3 text-slate-800 dark:text-slate-100">
+                    <div class="flex items-center gap-3 text-slate-800 dark:text-slate-100 text-left">
                         <div class="w-2.5 h-8 bg-indigo-600 rounded-full"></div>
                         <h2 class="text-2xl font-black tracking-tight">公曆 / 農曆 互換查詢</h2>
                     </div>
@@ -105,14 +105,14 @@
                 <div class="space-y-6">
                     <!-- Two Column Input -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div>
+                        <div class="text-left">
                             <label class="block text-xs font-bold text-slate-400 mb-2 uppercase tracking-[0.2em]">選擇西洋曆日期</label>
                             <input type="date" id="dateInput" 
                                 class="w-full border-2 border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 rounded-2xl px-5 py-4 focus:border-indigo-500 dark:focus:border-indigo-400 focus:bg-white dark:focus:bg-slate-900 outline-none text-xl transition-all shadow-sm text-slate-800 dark:text-white font-bold">
                         </div>
-                        <div>
+                        <div class="text-left">
                             <label class="block text-xs font-bold text-slate-400 mb-2 uppercase tracking-[0.2em]">對應民國年份</label>
-                            <div class="w-full border-2 border-slate-200 dark:border-slate-700 bg-indigo-50 dark:bg-slate-800/50 rounded-2xl px-5 py-4 flex items-center justify-between">
+                            <div class="w-full border-2 border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 rounded-2xl px-5 py-4 flex items-center justify-between">
                                 <span id="rocYearDisplay" class="text-xl font-black text-indigo-700 dark:text-indigo-300 tracking-tight">----</span>
                                 <span class="text-[10px] bg-indigo-100 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 px-3 py-1 rounded-full font-black uppercase tracking-[0.2em]">ROC</span>
                             </div>
@@ -136,7 +136,7 @@
         <!-- Tool 2: Solar Terms -->
         <section class="mb-12">
             <div class="bg-white dark:bg-slate-900 rounded-3xl shadow-lg p-6 md:p-10 border border-slate-200 dark:border-slate-800 transition-colors">
-                <div class="flex items-center gap-3 mb-10 text-slate-800 dark:text-slate-100">
+                <div class="flex items-center gap-3 mb-10 text-slate-800 dark:text-slate-100 text-left">
                     <div class="w-2.5 h-8 bg-emerald-500 rounded-full"></div>
                     <h2 class="text-2xl font-black tracking-tight">二十四節氣年度查詢</h2>
                 </div>
@@ -146,13 +146,13 @@
                     <div class="flex flex-row flex-nowrap items-center gap-4 md:gap-8 w-full md:w-auto overflow-x-auto pb-2 md:pb-0">
                         <div class="flex items-center gap-3 whitespace-nowrap shrink-0">
                             <label class="text-slate-400 dark:text-slate-500 font-bold text-[10px] uppercase tracking-widest leading-none">西元</label>
-                            <input type="number" id="ceYearInput" value="2025" min="1912" max="2100" 
+                            <input type="number" id="ceYearInput" min="1912" max="2100" 
                                 class="border-2 border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 rounded-2xl px-4 py-3 focus:border-emerald-500 dark:focus:border-emerald-400 outline-none text-2xl w-28 text-center font-black dark:text-white shadow-sm transition-all">
                         </div>
                         <div class="h-10 w-px bg-slate-200 dark:bg-slate-800 shrink-0"></div>
                         <div class="flex items-center gap-3 whitespace-nowrap shrink-0">
                             <label class="text-slate-400 dark:text-slate-500 font-bold text-[10px] uppercase tracking-widest leading-none">民國</label>
-                            <input type="number" id="rocYearInput" value="114" min="1" max="189" 
+                            <input type="number" id="rocYearInput" min="1" max="189" 
                                 class="border-2 border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 rounded-2xl px-4 py-3 focus:border-emerald-500 dark:focus:border-emerald-400 outline-none text-2xl w-24 text-center font-black dark:text-white shadow-sm transition-all">
                         </div>
                     </div>
@@ -175,26 +175,26 @@
         </section>
     </div>
 
-    <!-- Footer: 根據 Footer設計規範 -->
+    <!-- Footer -->
     <footer id="mainFooter" class="py-6 sm:py-8 border-t mt-auto transition-colors duration-300 bg-white border-slate-200 text-slate-500 dark:bg-slate-900/50 dark:border-slate-800 dark:text-slate-400">
-        <div class="max-w-[1650px] mx-auto px-4 sm:px-8 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
+        <div class="max-w-[1650px] mx-auto px-4 sm:px-8 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left text-left">
             <div class="flex flex-col md:flex-row items-center gap-4 md:gap-8">
                 <a href="https://github.com/kasimchang" target="_blank" class="group flex items-center gap-3">
                     <div class="p-2 bg-slate-100 dark:bg-slate-800 rounded-full group-hover:bg-blue-500 group-hover:text-white transition-all">
                         <i data-lucide="github" class="w-4 h-4"></i>
                     </div>
-                    <div class="flex flex-col text-left">
+                    <div class="flex flex-col text-left text-left">
                         <span class="text-[10px] uppercase font-black tracking-widest opacity-60">Created by</span>
                         <span class="text-sm font-bold tracking-tight dark:text-slate-200">kasimchang</span>
                     </div>
                 </a>
-                <div class="hidden md:block h-8 w-px bg-slate-200 dark:bg-slate-800"></div>
+                <div class="hidden md:block h-8 w-px bg-slate-200 dark:bg-slate-800 text-left"></div>
                 <div class="flex flex-col text-left">
-                    <span class="text-[10px] uppercase font-black tracking-widest opacity-60">Copyright</span>
-                    <span class="text-sm font-bold tracking-tight italic dark:text-slate-200">© 2026 農曆計算工具 Pro</span>
+                    <span class="text-[10px] uppercase font-black tracking-widest opacity-60 text-left">Copyright</span>
+                    <span class="text-sm font-bold tracking-tight italic dark:text-slate-200 text-left">© 2026 農曆計算工具 Pro</span>
                 </div>
             </div>
-            <div class="flex flex-col md:items-end">
+            <div class="flex flex-col md:items-end text-center md:text-right">
                 <span class="text-[10px] uppercase font-black tracking-[0.3em] text-blue-500/80 mb-1 leading-none">Precision Astronomy</span>
                 <p class="text-[11px] font-medium opacity-60">專為曆法與節氣設計的精密換算引擎</p>
             </div>
@@ -209,12 +209,12 @@
         const html = document.documentElement;
         const themeToggle = document.getElementById('themeToggle');
         
-        // 初始偵測 - 修改為預設白天模式
+        // 初始偵測 - 設定預設為黑夜模式
         const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'dark') {
-            html.classList.add('dark');
-        } else {
+        if (savedTheme === 'light') {
             html.classList.remove('dark');
+        } else {
+            html.classList.add('dark');
         }
 
         themeToggle.addEventListener('click', () => {
@@ -238,6 +238,14 @@
             const y = year % 100;
             const d = Math.floor((y * 0.2422 + 3.87) - Math.floor((y - 1) / 4));
             return new Date(year, 1, d); 
+        }
+
+        function getTodayDateString() {
+            const now = new Date();
+            const year = now.getFullYear();
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const day = String(now.getDate()).padStart(2, '0');
+            return `${year}-${month}-${day}`;
         }
 
         // --- 工具 1: 公曆轉農曆 ---
@@ -279,8 +287,8 @@
         }
 
         todayBtn.addEventListener('click', () => {
-            const today = new Date();
-            dateInput.value = today.toISOString().split('T')[0];
+            const todayStr = getTodayDateString();
+            dateInput.value = todayStr;
             updateSolarToLunar();
         });
 
@@ -333,18 +341,17 @@
                 const isDark = document.documentElement.classList.contains('dark');
                 const badgeClass = getSeasonBadgeClass(term.season, isDark);
                 
-                // 佈局優化：提升辨識度，使用流體字體
                 card.innerHTML = `
-                    <div class="flex justify-between items-start mb-4">
+                    <div class="flex justify-between items-start mb-4 text-left">
                         <span class="text-[clamp(0.6rem,2vw,0.75rem)] font-black px-3 py-1 rounded-full uppercase tracking-widest shadow-sm ${badgeClass}">
                             ${getSeasonName(term.season)} · ${typeLabel}
                         </span>
                         <span class="text-slate-400 dark:text-slate-600 font-black font-mono text-[clamp(0.6rem,2vw,0.75rem)]">${term.month}月</span>
                     </div>
                     <div class="flex justify-between items-center gap-3">
-                        <div class="space-y-1 overflow-hidden shrink-0">
+                        <div class="space-y-1 overflow-hidden shrink-0 text-left text-left">
                             <h3 class="text-[clamp(1.1rem,3.5vw,1.5rem)] font-black text-slate-800 dark:text-slate-100 leading-none tracking-tight">${term.name}</h3>
-                            <p class="text-indigo-600 dark:text-indigo-400 font-black text-[clamp(0.85rem,2.5vw,1rem)] whitespace-nowrap">
+                            <p class="text-indigo-600 dark:text-indigo-400 font-black text-[clamp(0.85rem,2.5vw,1rem)] whitespace-nowrap text-left">
                                 <span class="opacity-40 font-bold mr-1 text-[clamp(0.6rem,2vw,0.85rem)]">${year}</span>${term.month}/${day}
                             </p>
                         </div>
@@ -361,7 +368,7 @@
         function getSeasonBadgeClass(s, isDark) {
             const map = {
                 spring: isDark ? 'bg-emerald-900/60 text-emerald-400 border border-emerald-500/30' : 'bg-emerald-50 text-emerald-700 border border-emerald-200',
-                summer: isDark ? 'bg-red-900/60 text-red-400 border border-red-500/30' : 'bg-red-100 text-red-700 border border-red-200',
+                summer: isDark ? 'bg-red-900/60 text-red-400 border border-red-500/30' : 'bg-red-50 text-red-700 border border-red-200',
                 autumn: isDark ? 'bg-orange-900/60 text-orange-400 border border-orange-500/30' : 'bg-orange-50 text-orange-700 border border-orange-200',
                 winter: isDark ? 'bg-blue-900/60 text-blue-400 border border-blue-500/30' : 'bg-blue-50 text-blue-700 border border-blue-200'
             };
@@ -385,10 +392,15 @@
         });
 
         // 初始執行
-        const now = new Date();
-        dateInput.value = now.toISOString().split('T')[0];
+        const todayStr = getTodayDateString();
+        const currentYear = new Date().getFullYear();
+
+        dateInput.value = todayStr;
+        ceInput.value = currentYear;
+        rocInput.value = currentYear - 1911;
+
         updateSolarToLunar();
-        renderTerms(2025);
+        renderTerms(currentYear);
     </script>
 </body>
 </html>
